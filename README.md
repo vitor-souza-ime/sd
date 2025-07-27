@@ -50,29 +50,5 @@ sd/
 
 ---
 
-### 📄 `main.py`
 
-```python
-from diffusers import StableDiffusionPipeline
-import torch
-
-# Definir prompt
-prompt = (
-    "An electrical engineering laboratory, with circuits, oscilloscopes, multimeters and transformers, "
-    "detailed wires, soft lighting, highly realistic, digital art style, futuristic atmosphere"
-)
-
-# Carregar modelo
-pipe = StableDiffusionPipeline.from_pretrained(
-    "runwayml/stable-diffusion-v1-5",
-    torch_dtype=torch.float16
-).to("cuda")
-
-# Gerar imagem
-image = pipe(prompt).images[0]
-
-# Salvar imagem
-image.save("engenharia_eletrica.png")
-print("Imagem gerada e salva como engenharia_eletrica.png")
-````
 
